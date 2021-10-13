@@ -1,11 +1,27 @@
-import { useContext } from 'react';
+import { useContext, Suspense } from 'react';
 import { Context } from '../data/Context';
  
 export function Profile(){
 
-    let { fetchName } = useContext(Context);
+    let { fetchName, fetchData } = useContext(Context);
 
     return (<div className="Profile">
-        <h2>{fetchName}</h2>
+
+        <Suspense fallback={<h1>Loading...</h1>}>
+            <div id="info">
+                {fetchData.avatar_url ? <img src={fetchData.avatar_url} alt="pp" width={100} height={100}/> : ""}
+                <h1>{fetchData.name}</h1>
+                <h2>{fetchData.login}</h2>
+                <h3>{fetchData.bio}</h3>
+                <p>{fetchData.blog}</p>
+                <p>{fetchData.email ? fetchData.email : ""}</p>
+                <p>{fetchData.company ? fetchData.company : ""}</p>
+                <p>Followers: {fetchData.followers}</p>
+                <p>{fetchData.html_url}</p>
+                <p>{fetchData.location}</p>
+                <p>@{fetchData.twitter_username}</p>
+                <p>Public Repositories: {fetchData.public_repos}</p>
+             </div>
+        </Suspense>
     </div>)
 }

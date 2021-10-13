@@ -7,7 +7,7 @@ function App() {
 
   let [username, setUsername] = useState("");
 
-  const [fetchName, setFetchName] = useState("");
+  let [fetchData, setFetchData] = useState({});
 
   return (
     <div className="App">
@@ -16,7 +16,7 @@ function App() {
 
         <Context.Provider value={{
           username, setUsername,
-          fetchName, setFetchName
+          fetchData, setFetchData
           }}>
 
           <Main/> 

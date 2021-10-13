@@ -8,7 +8,7 @@ const Profile = lazy(() => import('./Profile').then(module => ({default:module.P
 
 export function Main(){
 
-    let { username, setUsername, setFetchName } = useContext(Context);
+    let { username, setUsername, setFetchName, setFetchData } = useContext(Context);
 
     const search = e => {
         e.preventDefault();
@@ -26,7 +26,7 @@ export function Main(){
                 return toast.error("Something went wrong")
             }
 
-            setFetchName(data.name);
+            setFetchData(data)
             toast.success("Success")
         })
     }
