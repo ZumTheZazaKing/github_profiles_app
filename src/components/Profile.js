@@ -3,7 +3,7 @@ import { Context } from '../data/Context';
  
 export function Profile(){
 
-    let { fetchName, fetchData } = useContext(Context);
+    let { fetchData } = useContext(Context);
 
     return (<div className="Profile">
 

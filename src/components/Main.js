@@ -8,7 +8,7 @@ const Profile = lazy(() => import('./Profile').then(module => ({default:module.P
 
 export function Main(){
 
-    let { username, setUsername, setFetchName, setFetchData } = useContext(Context);
+    let { username, setUsername, setFetchData } = useContext(Context);
 
     const search = e => {
         e.preventDefault();
