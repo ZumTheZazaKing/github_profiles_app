@@ -16,11 +16,11 @@ export function Profile(){
                 <p>{fetchData.blog}</p>
                 <p>{fetchData.email ? fetchData.email : ""}</p>
                 <p>{fetchData.company ? fetchData.company : ""}</p>
-                <p>Followers: {fetchData.followers}</p>
+                <p>{fetchData.followers ? `Followers: ${fetchData.followers}` : ""}</p>
                 <p>{fetchData.html_url}</p>
                 <p>{fetchData.location}</p>
-                <p>@{fetchData.twitter_username}</p>
-                <p>Public Repositories: {fetchData.public_repos}</p>
+                <p>{fetchData.twitter_username ? `@${fetchData.twitter_username}` : ""}</p>
+                <p>{fetchData.public_repos ? `Public Repositories: ${fetchData.public_repos}` : ""}</p>
              </div>
         </Suspense>
     </div>)
