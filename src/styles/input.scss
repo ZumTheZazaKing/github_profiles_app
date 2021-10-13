@@ -1,7 +1,61 @@
-body{
-    background: burlywood;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color: #c9d1d9;
 }
 
-#info{
-    border: 1px solid black;
+body{
+    background: #1b2431;
+
+}
+
+.App{
+    .Main{
+        margin-right: auto;
+        margin-left: auto;
+        width: 60%;
+        text-align: center;
+        margin-top: 20px;
+        input[type=text]{
+            padding: 10px;
+            color: black;
+            width: 50%;
+        }
+        .Profile{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+            #info{
+                width: 100%;
+                border-radius: 5px;
+                padding: 20px;
+                line-height: 1.5;
+                a{text-decoration: none;}
+                a:hover{text-decoration: underline; color: #58a6ff;}
+                #title{font-size: 26px;font-weight: bold;}
+                #login{color: #8b949e;font-size: 20px;}
+                word-break: break-all;
+                img{
+                    border-radius: 50%;
+                    border: 2px solid #36393d;
+                }
+                #others{
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .Main{
+        width: 90% !important;
+        input[type=text]{
+            width: 100% !important;
+        }
+    }
 }

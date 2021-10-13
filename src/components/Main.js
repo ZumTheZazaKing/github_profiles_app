@@ -33,6 +33,7 @@ export function Main(){
 
     return (<div className="Main">
         <h1>Github Profiles</h1>
+        <br/>
         <form onSubmit={e => search(e)}>
             <input type="text" value={username} onChange={e => setUsername(e.target.value)}/>
         </form>

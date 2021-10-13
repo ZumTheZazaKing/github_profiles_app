@@ -1,9 +1,71 @@
-body {
-  background: burlywood;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #c9d1d9;
 }
 
-#info {
-  border: 1px solid black;
+body {
+  background: #1b2431;
+}
+
+.App .Main {
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+  text-align: center;
+  margin-top: 20px;
+}
+.App .Main input[type=text] {
+  padding: 10px;
+  color: black;
+  width: 50%;
+}
+.App .Main .Profile {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
+.App .Main .Profile #info {
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+.App .Main .Profile #info a {
+  text-decoration: none;
+}
+.App .Main .Profile #info a:hover {
+  text-decoration: underline;
+  color: #58a6ff;
+}
+.App .Main .Profile #info #title {
+  font-size: 26px;
+  font-weight: bold;
+}
+.App .Main .Profile #info #login {
+  color: #8b949e;
+  font-size: 20px;
+}
+.App .Main .Profile #info img {
+  border-radius: 50%;
+  border: 2px solid #36393d;
+}
+.App .Main .Profile #info #others {
+  text-align: left;
+}
+
+@media only screen and (max-width: 800px) {
+  .Main {
+    width: 90% !important;
+  }
+  .Main input[type=text] {
+    width: 100% !important;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
