@@ -2,6 +2,7 @@ import { useContext, lazy, Suspense } from "react";
 import { Context } from '../data/Context';
 
 import SearchIcon from '@mui/icons-material/Search';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,8 +23,6 @@ export function Main(){
         fetch(`https://api.github.com/users/${username}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
-
             if(data.message === "Not Found"){
                 return toast.error("Something went wrong")
             }
@@ -41,7 +40,7 @@ export function Main(){
             <button type="submit"><SearchIcon id="searchIcon"/></button>
         </form>
         
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<CircularProgress className="loading" size={40} disableShrink/>}>
             <Profile/>
         </Suspense>
 

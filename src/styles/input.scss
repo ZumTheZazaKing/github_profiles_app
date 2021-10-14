@@ -11,12 +11,23 @@ body{
 }
 
 .App{
+    #mainLoading{
+        width: 100vw;
+        height: 100vh;
+        background-color: transparent;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .loading{color: white;}
     .Main{
         margin-right: auto;
         margin-left: auto;
         width: 60%;
         text-align: center;
         margin-top: 20px;
+        margin-bottom: 50px;
         h1{
             color: #c9d1d9;
         }
@@ -83,6 +94,17 @@ body{
                             }
                         }
                     }
+                }
+            }
+            #Repos{
+                width: 100%;
+                #notice{color: #8b949e;}
+                .repo{
+                    border-top: 2px solid white;
+                    padding: 10px;
+                    margin-top: 20px;
+                    #title{font-size: 26px;}
+                    #desc{font-size: 16px;color: #8b949e;}
                 }
             }
         }

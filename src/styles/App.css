@@ -9,12 +9,25 @@ body {
   background: #1b2431;
 }
 
+.App #mainLoading {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App .loading {
+  color: white;
+}
 .App .Main {
   margin-right: auto;
   margin-left: auto;
   width: 60%;
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 .App .Main h1 {
   color: #c9d1d9;
@@ -97,6 +110,24 @@ body {
 }
 .App .Main .Profile #info #others p span .icon {
   margin-right: 10px;
+}
+.App .Main .Profile #Repos {
+  width: 100%;
+}
+.App .Main .Profile #Repos #notice {
+  color: #8b949e;
+}
+.App .Main .Profile #Repos .repo {
+  border-top: 2px solid white;
+  padding: 10px;
+  margin-top: 20px;
+}
+.App .Main .Profile #Repos .repo #title {
+  font-size: 26px;
+}
+.App .Main .Profile #Repos .repo #desc {
+  font-size: 16px;
+  color: #8b949e;
 }
 
 @media only screen and (max-width: 800px) {

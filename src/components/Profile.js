@@ -1,4 +1,4 @@
-import { useContext, Suspense } from 'react';
+import { useContext, Suspense, lazy } from 'react';
 import { Context } from '../data/Context';
 
 import LinkIcon from '@mui/icons-material/Link';
@@ -9,6 +9,9 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
+import CircularProgress from '@mui/material/CircularProgress';
+
+const Repos = lazy(() => import('./Repos').then(module => ({default:module.Repos})));
  
 export function Profile(){
 
@@ -16,9 +19,9 @@ export function Profile(){
 
     return (<div className="Profile">
 
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<CircularProgress className="loading" size={40} disableShrink/>}>
             <div id="info">
-                {!fetchData.name ? <h2>Result displays here</h2> : ""}
+                {!fetchData.name && !fetchData.login ? <h2>Result displays here</h2> : ""}
                 {fetchData.avatar_url ? <img src={fetchData.avatar_url} alt="pp" width={100} height={100}/> : ""}
                 <p id="title">{fetchData.name}</p>
                 <p id="login">{fetchData.login}</p>
@@ -82,13 +85,11 @@ export function Profile(){
                             </a>
                         </span> : ""}
                     </p>
-                    <p>
-                        {fetchData.public_repos ? 
-                        <span>Public Repositories: 
-                            {fetchData.public_repos}
-                        </span> : ""}
-                    </p>
                 </div>
+                <br/>
+                {fetchData.public_repos ? 
+                    <Repos/> 
+                : ""}
              </div>
         </Suspense>
     </div>)
