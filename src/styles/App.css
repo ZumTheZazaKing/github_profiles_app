@@ -18,6 +18,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+.App .backToTop {
+  background-color: #58a6ff;
+  color: white;
+  font-size: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 .App .loading {
   color: white;
 }

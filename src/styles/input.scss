@@ -20,6 +20,13 @@ body{
         justify-content: center;
         align-items: center;
     }
+    .backToTop{
+        background-color: #58a6ff;
+        color: white;
+        font-size: 48px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
     .loading{color: white;}
     .Main{
         margin-right: auto;

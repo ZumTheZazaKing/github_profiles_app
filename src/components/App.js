@@ -2,6 +2,8 @@ import { lazy, Suspense, useState } from 'react';
 import { Context } from '../data/Context';
 
 import CircularProgress from '@mui/material/CircularProgress';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import BackToTop from "react-back-to-top-button";
 
 const Main = lazy(() => import('./Main').then(module => ({default:module.Main})));
 
@@ -19,9 +21,16 @@ function App() {
         <Context.Provider value={{
           username, setUsername,
           fetchData, setFetchData
-          }}>
+        }}>
 
           <Main/> 
+
+          <BackToTop
+            showAt={100}
+            speed={1500}
+          >
+           <KeyboardArrowUpIcon className="backToTop"/> 
+          </BackToTop>
 
         </Context.Provider>
 
