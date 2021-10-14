@@ -1,6 +1,8 @@
 import { useContext, lazy, Suspense } from "react";
 import { Context } from '../data/Context';
 
+import SearchIcon from '@mui/icons-material/Search';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -36,6 +38,7 @@ export function Main(){
         <br/>
         <form onSubmit={e => search(e)}>
             <input type="text" value={username} onChange={e => setUsername(e.target.value)}/>
+            <button type="submit"><SearchIcon id="searchIcon"/></button>
         </form>
         
         <Suspense fallback={<h1>Loading...</h1>}>
